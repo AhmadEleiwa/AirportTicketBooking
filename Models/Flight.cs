@@ -2,7 +2,7 @@ namespace AirportTicketBooking.Models
 {
     public class Flight
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
         public string DepartureCountry { get; set; }
         public string DestinationCountry { get; set; }
         public string DepartureAirport { get; set; }
