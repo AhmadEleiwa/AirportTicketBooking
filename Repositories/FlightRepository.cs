@@ -22,4 +22,11 @@ public class FlightRepository : IFlightRepository
         var json = JsonSerializer.Serialize(data, new JsonSerializerOptions{WriteIndented= true});
         File.WriteAllText(_path, json);
     }
+    public Flight GetById(Guid id)
+    {
+        if(!File.Exists(_path))return new Flight();
+
+        string json  = File.ReadAllText(_path);
+        return JsonSerializer.Deserialize<List<Flight>>(json).Find(p => p.Id == id) ?? new Flight();
+    }
 }
