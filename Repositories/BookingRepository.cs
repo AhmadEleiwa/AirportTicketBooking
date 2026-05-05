@@ -3,7 +3,7 @@ using AirportTicketBooking.Models;
 
 namespace AirportTicketBooking.Repositories;
 
-public class BookingRepository : IBookingtRepository
+public class BookingRepository : IBookingRepository
 {
     private readonly string _path;
     public BookingRepository(string path)

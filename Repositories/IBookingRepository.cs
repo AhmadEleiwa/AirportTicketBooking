@@ -2,8 +2,9 @@ using AirportTicketBooking.Models;
 
 namespace AirportTicketBooking.Repositories;
 
-public interface IBookingtRepository
+public interface IBookingRepository
 {
     List<Booking> GetAll();
     void SaveAll(List<Booking> Booking);
+    
 }
