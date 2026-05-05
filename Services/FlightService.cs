@@ -6,8 +6,8 @@ namespace AirportTicketBooking.Services;
 
 public class FlightService
 {
-    private FlightRepository _flight_repo;
-    private BookingRepository _booking_repo;
+    private IFlightRepository _flight_repo;
+    private IBookingRepository _booking_repo;
 
     
     public FlightService()

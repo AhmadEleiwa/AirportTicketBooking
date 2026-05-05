@@ -5,8 +5,8 @@ namespace AirportTicketBooking.Services;
 
 public class BookingService
 {
-    private readonly BookingRepository _bookingRepo;
-    private readonly FlightRepository _flightRepo;
+    private readonly IBookingRepository _bookingRepo;
+    private readonly IFlightRepository _flightRepo;
     public BookingService()
     {
         _bookingRepo = new BookingRepository("data/booking.json");
