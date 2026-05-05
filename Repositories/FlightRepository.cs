@@ -1,22 +1,23 @@
 using System.Text.Json;
+using AirportTicketBooking.Models;
 
 namespace AirportTicketBooking.Repositories;
 
-public class FileRepo<T>
+public class FlightRepository : IFlightRepository
 {
     private readonly string _path;
-    public FileRepo(string path)
+    public FlightRepository(string path)
     {
         this._path = path;
     }
-    public List<T> GetAll()
+    public List<Flight> GetAll()
     {
-        if(!File.Exists(_path))return new List<T>();
+        if(!File.Exists(_path))return new List<Flight>();
 
         string json  = File.ReadAllText(_path);
-        return JsonSerializer.Deserialize<List<T>>(json) ?? new List<T>();
+        return JsonSerializer.Deserialize<List<Flight>>(json) ?? new List<Flight>();
     }
-    public void Save(List<T> data)
+    public void SaveAll(List<Flight> data)
     {
         var json = JsonSerializer.Serialize(data, new JsonSerializerOptions{WriteIndented= true});
         File.WriteAllText(_path, json);
