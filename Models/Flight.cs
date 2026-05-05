@@ -12,7 +12,7 @@ namespace AirportTicketBooking.Models
         public decimal BusinessPrice { get; set; }
         public decimal FirstClassPrice { get; set; }
 
-        public decimal GetPrice(FlightClass flightClass)
+        public decimal GetPrice(FlightClass ?flightClass)
         {
             switch (flightClass)
             {
