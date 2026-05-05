@@ -3,7 +3,8 @@ namespace AirportTicketBooking.Models
     public class Booking
     {
         public Guid Id { get; set; }= Guid.NewGuid();
-        public int PassangerId { get; set; }
+        public Guid PassangerId { get; set; }
+        public Guid FlightId { get; set; }
 
         public FlightClass FlightClass { get; set; }
 
