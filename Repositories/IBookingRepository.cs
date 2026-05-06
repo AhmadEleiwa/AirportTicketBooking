@@ -4,7 +4,6 @@ namespace AirportTicketBooking.Repositories;
 
 public interface IBookingRepository
 {
-    List<Booking> GetAll();
-    void SaveAll(List<Booking> Booking);
-    
+    public List<Booking> GetAll();
+    public void SaveAll(List<Booking> Booking);
 }

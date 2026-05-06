@@ -22,4 +22,5 @@ public class BookingRepository : IBookingRepository
         var json = JsonSerializer.Serialize(data, new JsonSerializerOptions{WriteIndented= true});
         File.WriteAllText(_path, json);
     }
+    
 }
