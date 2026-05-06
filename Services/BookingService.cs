@@ -12,7 +12,7 @@ public class BookingService
         _bookingRepo = new BookingRepository("data/booking.json");
         _flightRepo = new FlightRepository("data/flight.json");
     }
-    public void book(Guid passnagerId, Guid flightId, FlightClass cls)
+    public void Book(Guid passnagerId, Guid flightId, FlightClass cls)
     {
         var flight = _flightRepo.GetById(flightId);
         if (flight == null)
@@ -64,5 +64,8 @@ public class BookingService
             .Where(b => b.PassangerId == passengerId)
             .ToList();
     }
-
+    public List<Booking> GetAll()
+    {
+          return _bookingRepo.GetAll();
+    }
 }
